@@ -7,3 +7,8 @@ sudo dpkg -i kali-archive-keyring_2024.1_all.deb
 rm kali-archive-keyring_2024.1_all.deb
 sudo apt-get update
 ```
+To exploit against wordpress site
+```bash
+set wpcheck false
+```
+
