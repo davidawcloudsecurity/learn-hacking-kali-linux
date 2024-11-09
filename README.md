@@ -9,7 +9,7 @@ sudo docker container start example
 sudo docker exec -it example /bin/bash
 ```
 ```bash
-tar -xvzf /root/wordlists/Seclists.gz
+tar -xvzf /root/wordlists/SecList.tar.gz /path/to/source/files
 ```
 ### How to hack web server workflow
 NMAP check for ports and OS
