@@ -1,12 +1,15 @@
 # learn-hacking-kali-linux
 
-### How to hack workflow
+### How to hack web server workflow
 NMAP check for ports and OS
 ```bash
 IP_ADDR=
 nmap -sV -sC -oA initial $IP_ADDR
 ```
+Enumerate for directories
+```bash
 
+```
 ### How to update kali linux
 ```bash
 wget http://http.kali.org/kali/pool/main/k/kali-archive-keyring/kali-archive-keyring_2024.1_all.deb
