@@ -1,5 +1,11 @@
 # learn-hacking-kali-linux
 
+### Run kali in a docker
+```bash
+sudo docker pull hackersploit/bugbountytoolkit
+sudo docker run --name example hackersploit/bugbountytoolkit
+```
+
 ### How to hack web server workflow
 NMAP check for ports and OS
 ```bash
