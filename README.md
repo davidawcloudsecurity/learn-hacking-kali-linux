@@ -54,4 +54,8 @@ To exploit against wordpress site
 ```bash
 set wpcheck false
 ```
-
+### Troubleshooting
+If hydra has issue
+```bash
+sudo apt install libmongoc-dev -y
+```
