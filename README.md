@@ -8,7 +8,9 @@ sudo docker run -it --name example hackersploit/bugbountytoolkit
 sudo docker container start example
 sudo docker exec -it example /bin/bash
 ```
-
+```bash
+tar -xvzf /root/wordlists/Seclists.gz
+```
 ### How to hack web server workflow
 NMAP check for ports and OS
 ```bash
