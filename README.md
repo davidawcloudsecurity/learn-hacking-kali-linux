@@ -5,7 +5,7 @@
 sudo docker pull hackersploit/bugbountytoolkit
 # run and exit
 sudo docker run -it --name example hackersploit/bugbountytoolkit
-sudo docker exec -it david02 /bin/bash
+sudo docker exec -it example /bin/bash
 ```
 
 ### How to hack web server workflow
