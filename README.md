@@ -8,7 +8,8 @@ nmap -sV -sC -oA initial $IP_ADDR
 ```
 Enumerate for directories
 ```bash
-
+WORDLISTS=
+gobuster dir -u HTTP://${IP_ADDR} -w ${WORDLISTS} -t 100 -q -o gobuster.txt
 ```
 ### How to update kali linux
 ```bash
