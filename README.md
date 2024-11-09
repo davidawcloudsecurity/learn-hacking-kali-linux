@@ -5,6 +5,7 @@
 sudo docker pull hackersploit/bugbountytoolkit
 # run and exit
 sudo docker run -it --name example hackersploit/bugbountytoolkit
+sudo docker container start example
 sudo docker exec -it example /bin/bash
 ```
 
