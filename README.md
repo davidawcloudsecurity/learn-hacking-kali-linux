@@ -11,21 +11,7 @@ sudo docker exec -it example /bin/bash
 ```bash
 tar -xvzf /root/wordlists/SecList.tar.gz /path/to/source/files
 ```
-### How to hack web server workflow
-NMAP check for ports and OS
-```bash
-IP_ADDR=
-nmap -sV -sC -oA initial $IP_ADDR
-```
-Enumerate for directories
-```bash
-WORDLISTS=
-gobuster dir -u HTTP://${IP_ADDR} -w ${WORDLISTS} -t 100 -q -o gobuster.txt
-```
-Bruteforce with hydra
-```bash
-hydra -L example.txt -p example $IP_ADDR http-post-form "/wp-login.php:log=^USER^&pwd=^PWD^:Invalid username" -t 30
-```
+
 ### How to update kali linux
 ```bash
 wget http://http.kali.org/kali/pool/main/k/kali-archive-keyring/kali-archive-keyring_2024.1_all.deb
