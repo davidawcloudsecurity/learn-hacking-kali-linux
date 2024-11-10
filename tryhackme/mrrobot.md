@@ -42,7 +42,11 @@ https://github.com/pentestmonkey/php-reverse-shell
 nc -lvnp 53
 ```
 
+### How to hack xmlrpc
+https://blog.sucuri.net/2015/10/brute-force-amplification-attacks-against-wordpress-xmlrpc.html
 ### Resource
 https://www.blackhillsinfosec.com/hacking-with-hydra/
+
+https://blog.christophetd.fr/write-up-mr-robot/
 
 https://medium.com/@hackermentor/vulnhub-mr-robot-walkthrough-9309702b8e8
