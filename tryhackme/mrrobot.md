@@ -41,7 +41,12 @@ https://github.com/pentestmonkey/php-reverse-shell
 ```bash
 nc -lvnp 53
 ```
-
+### How to escalate priv with SUID bit set
+https://gtfobins.github.io/gtfobins/nmap/
+```bash
+find / -perm -4000 -type f 2>/dev/null
+find / -perm +6000 2>/dev/null | grep '/bin/'
+```
 ### How to hack xmlrpc
 https://blog.sucuri.net/2015/10/brute-force-amplification-attacks-against-wordpress-xmlrpc.html
 ### Resource
