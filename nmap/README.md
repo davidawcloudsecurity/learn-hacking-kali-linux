@@ -41,7 +41,12 @@ The -A flag is useful for thorough scanning (OS, version, script scanning), but 
 - [ ] OS detection: nmap -O $IP_ADDR
 - [ ] Script scanning: nmap --script=<script_name> $IP_ADDR
 ### 5. Use -Pn with Caution:
-The -Pn flag disables host discovery, which is helpful if you're scanning hosts behind firewalls or in private networks. However, it can also cause Nmap to scan hosts that are actually down, increasing scan time and potentially wasting resources. If you're unsure whether the host is alive, run a quick ping or use -sn (ping scan) to check.
+The -Pn flag disables host discovery, which is helpful if you're scanning hosts behind firewalls or in private networks. However, it can also cause Nmap to scan hosts that are actually down, increasing scan time and potentially wasting resources.
+
+If you're unsure whether the host is alive, run a quick ping or use -sn (ping scan) to check.
+```bash
+nmap -sn $IP_ADDR
+```
 ### 6. Use Nmap Scripts Effectively:
 Nmap has many built-in scripts that can be useful for specific tasks, such as vulnerability scanning or banner grabbing. You can use --script to run specific scripts:
 ```bash
