@@ -1,5 +1,6 @@
 ## TryHackMe Walkthrough - Wekor
 Added wekor.thm to /etc/hosts
+
 URL=wekor.thm
 ### How to scan ports with nmap
 ```bash
