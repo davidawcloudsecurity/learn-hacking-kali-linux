@@ -5,7 +5,7 @@ nmap -sV -sC -oA initial $IP_ADDR
 ```
 ### How to enumerate web server directories
 ```bash
-WORDLISTS=
+WORDLISTS=/usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt   
 gobuster dir -u http://${IP_ADDR} -w ${WORDLISTS} -t 100 -q -o gobuster.txt
 ```
 ## How to filter unique string
