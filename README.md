@@ -45,3 +45,8 @@ If hydra has issue
 ```bash
 sudo apt install libmongoc-dev -y
 ```
+If hashcat has issue
+```bash
+sudo apt-get install libhwloc-dev ocl-icd-dev ocl-icd-opencl-dev; \
+sudo apt-get install pocl-opencl-icd
+```
