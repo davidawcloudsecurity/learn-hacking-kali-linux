@@ -17,3 +17,8 @@ wfuzz -c -w $DNSLISTS -t30 --hw 3 -H "Host:FUZZ.${URL}" "http://${URL}"
 WORDLISTS=/usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
 gobuster dir -e -u http://site.${URL} -xphp,txt -t30 -w ${WORDLISTS}
 ```
+### How to enumerate with wpscan
+```bash
+wpscan.api=$(cat ~/Downloads/wpscan.api)
+wpscan --url http://site.${URL}/wordpress/ -e ap,u --api-token ${wpscan.api}
+```
