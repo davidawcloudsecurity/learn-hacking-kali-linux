@@ -95,6 +95,10 @@ hashcat -a 0 -m 400 hash.txt /usr/share/wordlists/rockyou.txt
 ```bash
 john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
 ```
+### How to persist
+```bash
+python3 -c 'import pty; pty.spawn("/bin/bash")'
+```
 ## Resource
 https://erichogue.ca/2021/06/Wekor
 
