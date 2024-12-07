@@ -56,6 +56,9 @@ This is after you pull the users from the wordpress database and extract the has
 ```bash
 hashcat -a 0 -m 400 hash.txt /usr/share/wordlists/rockyou.txt
 ```
+```bash
+john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
+```
 ## Resource
 https://erichogue.ca/2021/06/Wekor
 
