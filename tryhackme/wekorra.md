@@ -103,4 +103,6 @@ python3 -c 'import pty; pty.spawn("/bin/bash")'
 https://erichogue.ca/2021/06/Wekor
 
 https://github.com/kartikeyj96/Tryhackme-Writeups/blob/main/Wekor%20Writeup
+
+https://medium.com/@alonpr1000/wekor-tryhackme-ctf-7741dea91a71
 ```
