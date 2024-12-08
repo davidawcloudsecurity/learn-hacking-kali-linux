@@ -95,9 +95,11 @@ hashcat -a 0 -m 400 hash.txt /usr/share/wordlists/rockyou.txt
 ```bash
 john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
 ```
-### How to run as bash
+### How to maintain connection?
 ```bash
 python3 -c 'import pty; pty.spawn("/bin/bash")'
+CTRL+Z
+stty raw -echo && fg
 ```
 ### How to show what the user can do
 ```bash
